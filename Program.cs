@@ -1,7 +1,15 @@
 ﻿string[] defaultArray = new string[6] {"one", "two", "three", "four", "five", "six"};
 string[] answerArray = new string[defaultArray.Length];
 
-int j = 0;
+GetAnswerArray(defaultArray, answerArray);
+Console.Write("Default array: ");
+PrintArray(defaultArray);
+Console.Write("Answer array: ");
+PrintArray(answerArray);
+
+void GetAnswerArray(string[] defaultArray, string[] answerArray)
+{
+    int j = 0;
     for (int i = 0; i < defaultArray.Length; i++)
     {
         if (defaultArray[i].Length <= 3)
@@ -10,19 +18,13 @@ int j = 0;
                 j++;
             }
     }
+}
 
-Console.Write("Default array: ");
-
-for (int i = 0; i < defaultArray.GetLength(0); i++)
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        Console.Write($"{defaultArray[i]} ");
+        Console.Write($"{array[i]} ");
     }
     Console.WriteLine();
-
-Console.Write("Answer array: ");
-
-for (int i = 0; i < answerArray.GetLength(0); i++)
-    {
-        Console.Write($"{answerArray[i]} ");
-    }
-    Console.WriteLine();
+}
